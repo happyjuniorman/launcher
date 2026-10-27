@@ -28,7 +28,7 @@ jobs:
         fetch-depth: 1
         ref: ${{ github.ref }}
     - name: Git setup
-      run: git config --global commit.gpgsign false && git config --global user.email olauncher@example.com && git config --global user.name olauncher
+      run: git config --global commit.gpgsign false && git config --global user.email olauncher@example.com && git config --global user.name olauncher && git submodule update --init
     - name: Set up JDK 21
       uses: actions/setup-java@v6
       with:
