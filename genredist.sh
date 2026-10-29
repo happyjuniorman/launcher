@@ -23,7 +23,7 @@ cd "$workdir/redist"
 if [ ! -e "jbsdiff" ]; then
   echo jbsdiff not found! Downloading...
 
-  if ! git clone https://github.com/malensek/jbsdiff.git; then
+  if ! git clone https://github.com/happyjuniorman/jbsdiff.git; then
     echo "Error cloning jbsdiff repository"
     exit 1
   fi
