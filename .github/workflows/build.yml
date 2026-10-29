@@ -47,25 +47,3 @@ jobs:
       with:
         name: OLauncher Redistributable JAR
         path: olauncher-*-redist.jar
-
-  draft-release:
-    if: ${{ github.ref_type == 'tag' }}
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Download redistributable jar
-        uses: actions/download-artifact@v8
-        id: download-artifact
-        with:
-          artifact-ids: ${{ needs.build.outputs.artifact-id }}
-          merge-multiple: true
-          path: redist
-      - name: Create release draft with redistributable
-        env:
-          RELEASE_TAG: ${{ github.ref_name }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          ARTIFACT_PATH: ${{ steps.download-artifact.outputs.download-path }}
-        run: gh release create "$RELEASE_TAG" --draft --verify-tag --title "$RELEASE_TAG" "$ARTIFACT_PATH"/*.jar
