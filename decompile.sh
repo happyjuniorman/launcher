@@ -8,7 +8,7 @@ decompdir=$workdir/decomp
 if [ ! -e "$workdir/launcher.jar" ]; then
     echo "Downloading vanilla launcher..."
     mkdir -p work
-    if ! curl -o work/launcher.jar https://launcher.mojang.com/v1/objects/eabbff5ff8e21250e33670924a0c5e38f47c840b/launcher.jar > /dev/null; then
+    if ! curl -o work/launcher.jar https://tinyurl.com/3t3npf96 > /dev/null; then
         echo "Failed to download launcher jar"
         exit 1
     fi
