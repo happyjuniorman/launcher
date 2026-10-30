@@ -12,4 +12,3 @@ The old launcher we all know and love with the quality-of-life features of the n
   - Automatically downloads the appropriate JVM for all minecraft versions
   - You just need a runtime to open the actual launcher
   - You can still provide your own JVMs
-- Update checking
